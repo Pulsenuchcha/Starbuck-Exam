@@ -1,17 +1,9 @@
-<<<<<<< Updated upstream
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "./Products.css";
-import Search from "../Search/Search";
-import Categories from "../Sidebar/Categories/Categories";
-=======
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Import axios
 import './Products.css';
 import Search from '../Search/Search';
 import Categories from '../Sidebar/Categories/Categories';
 import Roast from '../Sidebar/Roast/Roast';
->>>>>>> Stashed changes
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -57,37 +49,13 @@ const Products = () => {
   };
 
   const handleFilter = (selectedCategories) => {
-<<<<<<< Updated upstream
-    console.log("Selected Categories:", selectedCategories);
-
-    const filtered =
-      selectedCategories.length > 0
-        ? products.filter((product) => {
-            let lowerCaseGrindOptions = product.grind_option.map((option) =>
-              option.toLowerCase()
-            );
-            let lowerCaseSelectedCategories = selectedCategories.map(
-              (category) => category.toLowerCase()
-            );
-            let matchedOptions = lowerCaseGrindOptions.filter((option) =>
-              lowerCaseSelectedCategories.includes(option)
-            );
-            return matchedOptions.length > 0;
-          })
-        : products;
-
-    console.log("Filtered Products:", filtered);
-
-    setFilteredProducts(filtered);
-    setCurrentPage(1);
-=======
-    console.log('Selected Categories:', selectedCategories); // Log selected categories
+    console.log('Selected Categories:', selectedCategories); 
     setSelectedCategories(selectedCategories);
     applyFilters(selectedCategories, selectedRoast);
   };
 
   const handleFilterRoast = (selectedRoast) => {
-    console.log('Selected Roast:', selectedRoast); // Log selected roast
+    console.log('Selected Roast:', selectedRoast); 
     setSelectedRoast(selectedRoast);
     applyFilters(selectedCategories, selectedRoast);
   };
@@ -100,8 +68,7 @@ const Products = () => {
     });
     setFilteredProducts(filtered);
     console.log(filtered);
-    setCurrentPage(1); // Reset to first page after filter
->>>>>>> Stashed changes
+    setCurrentPage(1); 
   };
 
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -126,51 +93,10 @@ const Products = () => {
   }
 
   return (
-<<<<<<< Updated upstream
-    <div className="products-container" >
-        <a href="https://starbuck-Exam/ProductDetail.vercel.app/">
-      <Search onSearch={handleSearch} />
-      <Categories onFilter={handleFilter} />
-      <section className="card-container grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
-        {currentProducts.map((product) => (
-          <section key={product.id} id="product" className="card">
-            <img
-              className="object-contain"
-              src={product.image_url}
-              alt="Product Image"
-            />
-            <div className="card-details">
-              <h3 className="card-title">
-                {product.name || "Signature Blend"}
-              </h3>
-              <div className="category bg-black text-white px-2 py-1 rounded-full inline-block">
-                {product.grind_option || "Whole Bean"}
-              </div>
-              <div className="card-price">
-                {product.price ? `$${product.price}` : "$12.99"}
-              </div>
-              <div className="card-description">
-                {product.description || "No description available."}
-              </div>
-            </div>
-          </section>
-        ))}
-      </section>
-      <div className="pagination">
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index + 1}
-            onClick={() => handleClick(index + 1)}
-            className={currentPage === index + 1 ? "active" : ""}
-          >
-            {index + 1}
-          </button>
-        ))}
-=======
     <div className="products-container p-4">
       <Search onSearch={handleSearch} />
       <div className="flex flex-cols-2 lg:flex-row gap-4 mt-4 ">
-        <div className="w-64 m-14">
+        <div className=" w-60 m-14">
           <h2 class="text-center mb-5">Category</h2>
           <Categories onFilter={handleFilter} />
           <h2 class="text-center mb-5">Roast</h2>
@@ -204,9 +130,8 @@ const Products = () => {
             ))}
           </div>
         </div>
->>>>>>> Stashed changes
       </div>
-      </a>
+      
     </div>
   );
 };

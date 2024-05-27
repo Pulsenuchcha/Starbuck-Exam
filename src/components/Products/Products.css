@@ -132,7 +132,7 @@ input {
 }
 
 .pagination button.active {
-  background-color: #333;
+  background-color: #484747;
 }
 .pagination button:not(.active) {
   color: #000000;
