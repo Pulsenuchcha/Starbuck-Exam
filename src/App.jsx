@@ -1,22 +1,18 @@
 
 import React from "react";
-import Navbar from "./components/Navbar";
-import Banner from "./components/Banner";
-import Products from "./components/Products/Products"
-import Footer from "./components/Footer/Footer";
-import Pagination from "./components/Pagination/paginate";
-import Search from "./components/Search/Search";
-import Sidebar from "./components/Sidebar/Sidebar";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Homepage from "../Page/homepage"
+import ProductDetail from "../Page/ProductDetail";
 function App() {
   return (
-    <>
-  <Navbar/>
-  <Banner/>
-  <Products/>
-  <Footer/>
-
-  </>
+    <div className="App">
+    <Router>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/ProductDetail" element={<ProductDetail />} />
+    </Routes>
+    </Router>
+  </div>
   );
 }
 export default App;
