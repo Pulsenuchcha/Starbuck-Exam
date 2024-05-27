@@ -1,0 +1,11 @@
+.img{
+width:532px;
+height: 532px;
+}
+.hero-content{
+    
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
