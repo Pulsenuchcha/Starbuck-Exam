@@ -1,0 +1,158 @@
+
+.products-container {
+  padding: 0 1rem;
+}
+
+nav {
+  display: flex;
+  border-bottom: 2px solid #f3f3f3;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 999;
+  margin-left: 2rem;
+  flex-wrap: wrap;
+}
+
+form {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+input {
+  padding: 12px 20px;
+  border: none;
+  background: #ffffff;
+  outline: none;
+  margin-right: 20px;
+  border-radius: 5px;
+  border:solid #9e9c9c;
+  width: 70%;
+  max-width: 30rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+  }
+
+  input {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 100%;
+      margin-top: 1%;
+  }
+
+  form {
+      width: 70%;
+      justify-content: flex-start;
+      margin-left: 20%;
+      margin-top: 2%;
+  }
+}
+
+@media (max-width: 576px) {
+  nav {
+      margin-left: 1rem;
+      padding: 10px;
+  }
+
+  input {
+      margin-bottom: 10px;
+  }
+}
+
+.card-container {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+
+}
+
+.card img {
+  max-width: 100%;
+  width: 528px;
+  height: 528px;
+  border-radius: 10px;
+}
+
+.card-details {
+  margin-top: 10px;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.category {
+  margin: 10px 0;
+}
+
+.card-price {
+  font-size: 1.2em;
+  color: #4CAF50;
+}
+
+.card-description {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #666;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 5%;
+}
+
+.pagination button {
+  background-color: #ffffff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #333;
+}
+.pagination button:not(.active) {
+  color: #000000;
+}
+
+/* Media Queries for card container responsiveness */
+@media (max-width: 1200px) {
+  .card-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .card-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .card-container {
+      grid-template-columns: 1fr;
+  }
+}
