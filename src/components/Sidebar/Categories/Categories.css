@@ -1,12 +1,20 @@
-/* src/Filter/Filter.css */
+/* Categories.css */
 .filter-container {
-  margin-bottom: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
-.category-select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
+.checkbox-item {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+label {
+  cursor: pointer;
 }
